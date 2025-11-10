@@ -149,7 +149,7 @@ epochs=2
 for epoch in range(epochs):
  losses=[]
  correct=0
- for i in range(50):
+ for i in range(60000):
   img=x_train[i].transpose(2,0,1)
   label=y_train_oh[i].reshape(1,-1)
   out=cnn.forward(img)
@@ -160,10 +160,11 @@ for epoch in range(epochs):
  print(f"Epoch {epoch+1}: Loss={np.mean(losses):.4f}, Accurcy={acc:.3f}")
 
 correct=0
-for i in range(50):
+for i in range(10000):
  img=x_test[i].transpose(2,0,1)
  label=y_test_oh[i].reshape(1,-1)
  out=cnn.forward(img)
  if np.argmax(out)==np.argmax(label):
   correct+=1
 print(f"Test Accurcy={correct/50:.3f}")
+
