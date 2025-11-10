@@ -156,7 +156,7 @@ for epoch in range(epochs):
   losses.append(cross_entropy_loss(out,label))
   if np.argmax(out)==np.argmax(label):
    correct+=1
- acc=correct/50
+ acc=correct/60000
  print(f"Epoch {epoch+1}: Loss={np.mean(losses):.4f}, Accurcy={acc:.3f}")
 
 correct=0
@@ -166,5 +166,6 @@ for i in range(10000):
  out=cnn.forward(img)
  if np.argmax(out)==np.argmax(label):
   correct+=1
-print(f"Test Accurcy={correct/50:.3f}")
+print(f"Test Accurcy={correct/10000:.3f}")
+
 
