@@ -43,13 +43,10 @@ class Linear:
 
 
 
-# ******** Dataset ******* Note: In the second task, no specific dataset was requested, so random data was used for testing model.
-#
-
 from keras.datasets import mnist
 from matplotlib import pyplot
 
-#loading the dataset
+
 (train_X, train_y), (test_X, test_y) = mnist.load_data()
 
 #printing the shapes of the vectors
@@ -108,7 +105,7 @@ def ReLU(z):
     return np.maximum(0,z)
 
 
-# Binary cross entroopy loss ***
+
 
 def loss(y_pred,y_true):
     epsilon = 1e-8
@@ -302,6 +299,7 @@ y_pred_test= model.forward(x_test)
 y_pred_classes =np.argmax(y_pred_test,axis=1)
 accuracy = np.mean(y_pred_classes==y_test)
 print(f"Test Accuracy: {accuracy*100:.2f}%")
+
 
 
 
