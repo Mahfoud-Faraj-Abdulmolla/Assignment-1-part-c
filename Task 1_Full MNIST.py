@@ -288,7 +288,7 @@ plt.title("Training Loss vs Epochs for Different Activations")
 plt.xlabel("Epoch")
 plt.legend()
 plt.grid(True)
-#plt.show()
+plt.show()
 
 
 
@@ -299,6 +299,7 @@ y_pred_test= model.forward(x_test)
 y_pred_classes =np.argmax(y_pred_test,axis=1)
 accuracy = np.mean(y_pred_classes==y_test)
 print(f"Test Accuracy: {accuracy*100:.2f}%")
+
 
 
 
